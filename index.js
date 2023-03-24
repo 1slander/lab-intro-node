@@ -18,13 +18,39 @@ class SortedList {
     }
   }
 
-  max() {}
+  max() {
+    if(this.length===0){
+      throw new Error('EmptySortedList');
+    } else {
+      return Math.max(...this.items);
+    }
+  }
 
-  min() {}
+  min() {
+    if(this.length===0){
+      throw new Error('EmptySortedList');
+    } else {
+      return Math.min(...this.items);
+    }
+  }
 
-  sum() {}
+  sum() {
+    if(this.length===0){
+      return 0
+    } else {
+      
+      const sum= this.items.reduce((acc,curr)=>acc + curr);
+      return sum;
+    }
+  }
 
-  avg() {}
+  avg() {
+    if(this.length===0){
+      throw new Error('EmptySortedList');
+    } else {
+      return this.sum()/this.length;
+    }
+  }
 }
 
 module.exports = SortedList;
